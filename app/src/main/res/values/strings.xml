@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="favorite">Favorite</string>
+    <string name="menu_1">Menu 1</string>
+    <string name="no_data">Empty data</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+    <string name="title_favorite">favorite</string>
+</resources>
