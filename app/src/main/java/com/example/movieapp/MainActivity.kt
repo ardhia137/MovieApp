@@ -3,6 +3,7 @@ package com.example.movieapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import com.example.movieapp.core.ui.MovieAdapter
 import com.example.movieapp.databinding.ActivityMainBinding
 import com.example.movieapp.detail.DetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +45,9 @@ class MainActivity : AppCompatActivity() {
 
 
         mainViewModel.movie.observe(this, { movie ->
+            Log.d("MainActivity", "Observed movie: $movie")
             if (movie != null) {
+
                 when (movie) {
                     is com.example.movieapp.core.data.Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                     is com.example.movieapp.core.data.Resource.Success -> {
@@ -51,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                         movieAdapter.setData(movie.data)
                     }
                     is com.example.movieapp.core.data.Resource.Error -> {
+                Log.e("NetworkError", "Gagal mengambil data dari API ${movie.message}",);
+
                         binding.progressBar.visibility = View.GONE
                         binding.viewError.tvError.visibility = View.VISIBLE
                         // Set error message to view
