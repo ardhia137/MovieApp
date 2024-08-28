@@ -5,4 +5,7 @@
     <string name="no_data">Empty data</string>
     <string name="something_wrong">Oops.. something went wrong</string>
     <string name="title_favorite">favorite</string>
+    <string name="movie_rating">Rating: %.1f</string>
+    <string name="movie_release_date">Tanggal Rilis: %s</string>
+    <string name="gambar_item">Gambar Item</string>
 </resources>

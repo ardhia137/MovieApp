@@ -6,7 +6,6 @@
             android:id="@+id/menu1"
             android:icon="@drawable/favorite"
             android:title="@string/menu_1"
-            android:iconTint="@color/black"
             app:showAsAction="ifRoom" />
     </group>
 </menu>
